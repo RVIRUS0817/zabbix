@@ -6,7 +6,7 @@ channel='#hoge'
 username='Zabbix'
 
 # Get the Slack incoming web-hook token ($1) and Zabbix subject ($2 - hopefully either PROBLEM or RECOVERY)
-token="https://hooks.slack.com/services/hoge"
+token="https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxxxx"
 strSubject="$2"
 
 # Extract status & severity from subject:
@@ -70,7 +70,7 @@ attachment="
 # Build our JSON payload and send it as a POST request to the Slack incoming web-hook URL
 payload="payload={\"channel\": \"${channel}\", \"username\": \"${username}\", \"icon_emoji\": \"${emoji}\", \"attachments\":[${attachment}]}"
 
-/usr/bin/curl -m 5 --data "${payload}" "https://hooks.slack.com/services/"
+/usr/bin/curl -m 5 --data-urlencode "${payload}" 'https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxxx'
 
 # zabbix command
-/usr/lib/zabbix/alertscripts/slack.sh '@hoge' "{TRIGGER.STATUS}-{HOSTNAME}" "{TRIGGER.NAME}-{ITEM.VALUE1}"
+/usr/lib/zabbix/alertscripts/slack.sh '#channel' "{TRIGGER.STATUS}-{HOSTNAME}" "{TRIGGER.NAME}-{ITEM.VALUE1}"

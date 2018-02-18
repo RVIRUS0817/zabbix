@@ -1,7 +1,7 @@
 # Zabbix-scripts
 
-slack, LINE, script for notifications , SSL certificate monitoring and zabbix db backup scripts.   
-Change the following to zabbix_server.conf  
+Slack, LINE, script for notifications,SSL certificate monitoring and zabbix db backup scripts.   
+U have to change the following to zabbix_server.conf!  
 ```
 AlertScriptsPath=/usr/lib/zabbix/alertscripts
 
